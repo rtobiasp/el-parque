@@ -12,8 +12,12 @@ const { title, img, description } = Astro.props;
     loading={"lazy"}
   />
   <div class="swiper-lazy-preloader"></div>
-  <div class="text-brand-black flex flex-row justify-between py-2 px-1">
-    <h3>{title}</h3>
-    <p>{description}</p>
+  <div
+    class="flex flex-row items-baseline justify-between gap-4 px-1 py-3 text-brand-black"
+  >
+    <h3 class="text-lg leading-tight">{title}</h3>
+    <p class="text-right text-sm leading-tight text-brand-black/70">
+      {description}
+    </p>
   </div>
 </article>

@@ -12,12 +12,23 @@ html {
 
 body {
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-brand-black);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p {
+  line-height: 1.6;
 }
 
 @theme {
