@@ -1,0 +1,54 @@
+---
+import Image from "astro/components/Image.astro";
+import logo from "../assets/logo.png";
+---
+
+<nav class="navbar flex flex-row justify-center items-center px-60 h-[20vh]">
+  <div>
+    <a href="/">
+      <Image
+        class="navbar-logo"
+        src={logo}
+        alt="Logotipo del sitio"
+        width={200}
+      />
+    </a>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  const updateNavbar = () => {
+    navbar?.classList.toggle("navbar-scrolled", window.scrollY > 0);
+  };
+
+  updateNavbar();
+  window.addEventListener("scroll", updateNavbar, { passive: true });
+</script>
+
+<style>
+  .navbar {
+    transition:
+      height 180ms ease,
+      background-color 180ms ease;
+  }
+
+  .navbar-logo {
+    width: 200px;
+    transition: width 180ms ease;
+  }
+
+  .navbar-scrolled {
+    height: 15vh;
+    background-color: color-mix(
+      in srgb,
+      var(--color-brand-primary) 95%,
+      transparent
+    );
+  }
+
+  .navbar-scrolled .navbar-logo {
+    width: 150px;
+  }
+</style>

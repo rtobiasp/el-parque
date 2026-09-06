@@ -1,0 +1,13 @@
+---
+const { text, link, class: customClass = "" } = Astro.props;
+---
+
+<a
+  href={link}
+  class:list={[
+    "inline-block bg-brand-primary px-6 py-3 text-sm font-semibold uppercase tracking-wider text-brand-white transition-colors hover:bg-brand-black",
+    customClass,
+  ]}
+>
+  {text}
+</a>
