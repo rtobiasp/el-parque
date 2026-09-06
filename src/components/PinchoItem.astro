@@ -4,7 +4,16 @@ import Image from "astro/components/Image.astro";
 const { title, img, description } = Astro.props;
 ---
 
-<article>
-  <h3>{title}</h3>
-  <Image src={img} alt={"Imagen del pincho " + title} />
+<article class="rounded-2xl bg-brand-white p-2">
+  <Image
+    class={"rounded-2xl"}
+    src={img}
+    alt={"Imagen del pincho " + title}
+    loading={"lazy"}
+  />
+  <div class="swiper-lazy-preloader"></div>
+  <div class="text-brand-black flex flex-row justify-between py-2 px-1">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
 </article>

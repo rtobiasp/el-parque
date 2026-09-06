@@ -1,5 +1,6 @@
 ---
 import PinchoItem from "../components/PinchoItem.astro";
+import pincho_individual from "../assets/pincho_individual.png";
 ---
 
 <section
@@ -8,10 +9,58 @@ import PinchoItem from "../components/PinchoItem.astro";
   <div class="titulo-pinchos">
     <h2 class="text-6xl font-display">Descubre nuestros pinchos estrella</h2>
   </div>
-  <div class="pinchos">
+  <div class="pinchos grid grid-cols-[30%_70%]">
     <div class="info-pinchos">dawdw</div>
-    <div class="slider-pinchos">
-      <PinchoItem />
+    <div class="swiper swiper-container relative min-w-0 w-full">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <PinchoItem
+            title="Tortilla"
+            img={pincho_individual}
+            description="Picante"
+          />
+        </div>
+        <div class="swiper-slide">
+          <PinchoItem title="Kebab" img={pincho_individual} description="" />
+        </div>
+        <div class="swiper-slide">
+          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+        </div>
+        <div class="swiper-slide">
+          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+        </div>
+        <div class="swiper-slide">
+          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+        </div>
+        <div class="swiper-slide">
+          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css";
+
+  new Swiper(".swiper", {
+    modules: [Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    spaceBetween: 16,
+    slidesPerView: 1.15,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 2.5,
+      },
+    },
+  });
+</script>

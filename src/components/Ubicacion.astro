@@ -28,14 +28,20 @@ import icon_clock from "../assets/icon-clock.png";
         />
         <p>C. Artesanos, 10, 26006 <br /> Varea, La Rioja</p>
       </div>
-      <div class="dato-ubicacion flex flex-row gap-2">
+      <div class="dato-ubicacion flex flex-row gap-2 items-center">
         <Image
           src={icon_phone}
           alt="Icono de un teléfono"
           width={22}
           height={22}
         />
-        <p>941395127</p>
+        <a
+          href="tel:+34941395127"
+          aria-label="Llamar al 941 395 127"
+          class="font-medium text-brand-primary underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4"
+        >
+          941 395 127
+        </a>
       </div>
       <div class="dato-ubicacion flex flex-col gap-3">
         <div class="flex flex-row gap-2">
