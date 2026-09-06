@@ -1,0 +1,10 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { title, img, description } = Astro.props;
+---
+
+<article>
+  <h3>{title}</h3>
+  <Image src={img} alt={"Imagen del pincho " + title} />
+</article>

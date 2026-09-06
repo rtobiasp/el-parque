@@ -2,13 +2,60 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Opiniones from "../components/Opiniones.astro";
-import Contacto from "../components/Contacto.astro";
 import Ubicacion from "../components/Ubicacion.astro";
+import Pinchos from "../components/Pinchos.astro";
+import Premios from "../components/Premios.astro";
 ---
 
 <Layout>
   <Hero />
   <Ubicacion />
+  <Pinchos />
+  <Premios />
   <Opiniones />
-  <Contacto />
 </Layout>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl_hero = gsap.timeline({
+    duration: 0.6,
+  });
+
+  gsap.from(".navbar-logo", {
+    opacity: 0,
+    duration: 3,
+  });
+
+  tl_hero
+    .from(".titulo", {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    })
+    .from(".btn-hero", {
+      opacity: 0,
+      duration: 1,
+    })
+    .from(
+      ".supratitulo",
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      "<",
+    );
+
+  gsap.from(".dato-ubicacion", {
+    scrollTrigger: {
+      trigger: "[data-location-section]",
+      start: "top 80%",
+    },
+    x: -100,
+    opacity: 0,
+    stagger: 0.15,
+  });
+</script>
