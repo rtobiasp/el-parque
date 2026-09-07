@@ -1,0 +1,4 @@
+﻿- pincho-tortilla.jpg: File:Tortilla de patatas con cebolla.jpg | Autor: Mentxuwiki | Licencia: CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tortilla_de_patatas_con_cebolla.jpg
+- pincho-croquetas.jpg: File:Croquetas Caseras (7068664101).jpg | Autor: Jonathan Pincas from Leon, Spain | Licencia: CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Croquetas_Caseras_(7068664101).jpg
+- pincho-bravas.jpg: File:Patatas bravas. Tapa de bar (España).jpg | Autor: Juan Emilio Prades Bel | Licencia: CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Patatas_bravas._Tapa_de_bar_(Espa%C3%B1a).jpg
+- pincho-gilda.jpg: File:Gildas en Donostia.jpg | Autor: Biskuit from Atlanta, GA | Licencia: CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gildas_en_Donostia.jpg

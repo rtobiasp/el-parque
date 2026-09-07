@@ -1,6 +1,8 @@
 ---
 import PinchoItem from "../ui/PinchoItem.astro";
-import pincho_individual from "../../assets/pincho_individual.png";
+import pinchoTortilla from "../../assets/pincho-tortilla.jpg";
+import pinchoBravas from "../../assets/pincho-bravas.jpg";
+import pinchoGilda from "../../assets/pincho-gilda.jpg";
 import iconFlecha from "../../assets/icon-flecha.png";
 ---
 
@@ -21,10 +23,9 @@ import iconFlecha from "../../assets/icon-flecha.png";
       <p
         class="m-0 text-base leading-7 md:text-lg md:leading-8 lg:text-xl lg:leading-9"
       >
-        Los jueves a partir de las 20:00 la barra se llena de sabor. Elige tu
-        pincho favorito de nuestra selección semanal y acompáñalo con tu
-        consumición al mejor precio. El plan perfecto para desconectar y empezar
-        a saborear el fin de semana.
+        Los jueves a partir de las 20:00 la barra se llena de sabor. Descubre
+        algunos clásicos del pincho-pote y acompáñalos con tu consumición. La
+        selección puede variar según disponibilidad.
       </p>
     </div>
     <div class="pincho-slider-wrap relative min-w-0 w-full">
@@ -34,10 +35,25 @@ import iconFlecha from "../../assets/icon-flecha.png";
       >
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <PinchoItem title="Tortilla" img={pincho_individual} />
+            <PinchoItem
+              title="Tortilla de patata"
+              description="Patata, huevo y cebolla: un clásico jugoso para empezar."
+              img={pinchoTortilla}
+            />
           </div>
           <div class="swiper-slide">
-            <PinchoItem title="Kebab" img={pincho_individual} />
+            <PinchoItem
+              title="Patatas bravas"
+              description="Patata dorada y salsa brava, con el punto justo de picante."
+              img={pinchoBravas}
+            />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem
+              title="Gilda"
+              description="La combinación vasca de anchoa, aceituna y piparra."
+              img={pinchoGilda}
+            />
           </div>
         </div>
       </div>
