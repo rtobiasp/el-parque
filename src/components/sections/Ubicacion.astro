@@ -8,12 +8,10 @@ import icon_clock from "../../assets/icon-clock.png";
 <section
   id="ubicacion"
   data-location-section
-  class="section-shell flex flex-col gap-8 bg-brand-white px-6 py-12 md:px-20"
+  class="section-shell flex flex-col gap-8 overflow-hidden bg-brand-white px-6 py-12 md:px-20"
 >
-  <div class="flex flex-row items-center gap-4">
-    <h2
-      class="shrink-0 whitespace-nowrap text-xl font-medium uppercase leading-tight sm:text-2xl"
-    >
+  <div class="flex items-center gap-3 sm:gap-4">
+    <h2 class="min-w-0 text-lg font-medium uppercase leading-tight sm:text-2xl">
       Dónde encontrarnos
     </h2>
     <div class="border-b flex-1"></div>
@@ -57,39 +55,41 @@ import icon_clock from "../../assets/icon-clock.png";
           <p class="font-medium">Horarios:</p>
         </div>
         <div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Lunes</strong>
-            <p>08:00 - 23:00</p>
+            <p class="m-0 text-right">08:00 - 23:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Martes</strong>
-            <p>08:00 - 23:00</p>
+            <p class="m-0 text-right">08:00 - 23:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Miércoles</strong>
-            <p>08:00 - 23:00</p>
+            <p class="m-0 text-right">08:00 - 23:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Jueves</strong>
-            <p>08:00 - 23:00</p>
+            <p class="m-0 text-right">08:00 - 23:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Viernes</strong>
-            <p>08:00 - 24:00</p>
+            <p class="m-0 text-right">08:00 - 24:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Sábado</strong>
-            <p>08:00 - 24:00</p>
+            <p class="m-0 text-right">08:00 - 24:00</p>
           </div>
-          <div class="flex flex-row justify-between">
+          <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4">
             <strong>Domingo</strong>
-            <p>Cerrado</p>
+            <p class="m-0 text-right">Cerrado</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="iframe-ubicacion aspect-video min-h-0 w-full overflow-hidden">
+    <div
+      class="iframe-ubicacion aspect-[4/3] min-h-0 w-full overflow-hidden md:aspect-video"
+    >
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.4043453983777!2d-2.4114154161891417!3d42.461688254389074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5aab9153851001%3A0xce977d540bed5624!2sCafeteria%20El%20Parque!5e0!3m2!1ses!2ses!4v1788512407507!5m2!1ses!2ses"
         width="100%"

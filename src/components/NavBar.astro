@@ -3,7 +3,9 @@ import Image from "astro/components/Image.astro";
 import logo from "../assets/logo.png";
 ---
 
-<nav class="navbar flex flex-row justify-center items-center px-60 h-[20vh]">
+<nav
+  class="navbar flex h-24 flex-row items-center justify-center overflow-hidden px-4 sm:px-8 md:h-32 md:px-20"
+>
   <div>
     <a href="/">
       <Image
@@ -35,12 +37,14 @@ import logo from "../assets/logo.png";
   }
 
   .navbar-logo {
-    width: 200px;
+    width: min(200px, 58vw);
+    max-height: calc(100% - 1rem);
+    object-fit: contain;
     transition: width 180ms ease;
   }
 
   .navbar-scrolled {
-    height: 15vh;
+    height: 4.5rem;
     background-color: color-mix(
       in srgb,
       var(--color-brand-primary) 95%,
@@ -49,6 +53,23 @@ import logo from "../assets/logo.png";
   }
 
   .navbar-scrolled .navbar-logo {
-    width: 150px;
+    width: min(150px, 46vw);
+    max-height: calc(100% - 1rem);
+  }
+
+  @media (max-width: 767px) {
+    .navbar-logo {
+      width: min(120px, 48vw);
+    }
+
+    .navbar-scrolled .navbar-logo {
+      width: min(80px, 32vw);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .navbar-scrolled {
+      height: 5.5rem;
+    }
   }
 </style>

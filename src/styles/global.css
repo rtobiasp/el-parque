@@ -10,11 +10,18 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-brand-black);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
