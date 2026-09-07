@@ -1,6 +1,7 @@
 ---
 import PinchoItem from "../ui/PinchoItem.astro";
 import pincho_individual from "../../assets/pincho_individual.png";
+import iconFlecha from "../../assets/icon-flecha.png";
 ---
 
 <section
@@ -14,7 +15,7 @@ import pincho_individual from "../../assets/pincho_individual.png";
     </h2>
   </div>
   <div
-    class="pinchos relative z-10 grid min-h-0 grid-cols-1 items-center gap-8 lg:grid-cols-[1.5fr_3fr]"
+    class="pinchos relative z-10 grid min-h-0 grid-cols-1 items-center gap-8 lg:grid-cols-[1.35fr_3fr]"
   >
     <div class="info-pinchos min-w-0 max-w-xl text-brand-white/80">
       <p
@@ -26,27 +27,53 @@ import pincho_individual from "../../assets/pincho_individual.png";
         a saborear el fin de semana.
       </p>
     </div>
-    <div
-      class="swiper swiper-container relative min-w-0 w-full rounded-tl-4xl rounded-bl-4xl"
-    >
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <PinchoItem title="Tortilla" img={pincho_individual} />
+    <div class="pincho-slider-wrap relative min-w-0 w-full">
+      <div
+        class="swiper swiper-container relative w-full overflow-hidden rounded-3xl"
+        aria-label="Selección de pinchos"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <PinchoItem title="Tortilla" img={pincho_individual} />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem title="Kebab" img={pincho_individual} />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem title="TEST" img={pincho_individual} />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem title="TEST" img={pincho_individual} />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem title="TEST" img={pincho_individual} />
+          </div>
+          <div class="swiper-slide">
+            <PinchoItem title="TEST" img={pincho_individual} />
+          </div>
         </div>
-        <div class="swiper-slide">
-          <PinchoItem title="Kebab" img={pincho_individual} />
-        </div>
-        <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} />
-        </div>
-        <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} />
-        </div>
-        <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} />
-        </div>
-        <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} />
+      </div>
+      <div class="mt-5 flex items-center justify-between gap-4">
+        <div class="swiper-pagination"></div>
+        <div class="flex gap-2">
+          <button
+            class="swiper-button-prev-custom"
+            type="button"
+            aria-label="Pincho anterior"
+          >
+            <img
+              class="arrow-icon arrow-icon-prev"
+              src={iconFlecha.src}
+              alt=""
+            />
+          </button>
+          <button
+            class="swiper-button-next-custom"
+            type="button"
+            aria-label="Siguiente pincho"
+          >
+            <img class="arrow-icon" src={iconFlecha.src} alt="" />
+          </button>
         </div>
       </div>
     </div>
@@ -55,11 +82,11 @@ import pincho_individual from "../../assets/pincho_individual.png";
 
 <script>
   import Swiper from "swiper";
-  import { Autoplay } from "swiper/modules";
+  import { Autoplay, Navigation, Pagination } from "swiper/modules";
   import "swiper/css";
 
   new Swiper(".swiper", {
-    modules: [Autoplay],
+    modules: [Autoplay, Navigation, Pagination],
     loop: true,
     grabCursor: true,
     autoplay: {
@@ -67,14 +94,22 @@ import pincho_individual from "../../assets/pincho_individual.png";
       disableOnInteraction: false,
     },
     spaceBetween: 16,
-    slidesPerView: 3,
+    slidesPerView: 1.25,
     breakpoints: {
       640: {
         slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 1.75,
+        slidesPerView: 1.5,
       },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
   });
 </script>
@@ -89,5 +124,85 @@ import pincho_individual from "../../assets/pincho_individual.png";
   .info-pinchos p {
     max-width: 26rem;
     text-wrap: pretty;
+  }
+
+  .pincho-slider-wrap {
+    padding-bottom: 0.25rem;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: static !important;
+    width: auto !important;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 0.45rem;
+    height: 0.45rem;
+    margin: 0 !important;
+    background: rgba(242, 247, 248, 0.5);
+    opacity: 1;
+    transition:
+      width 200ms ease,
+      background-color 200ms ease;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    width: 1.5rem;
+    border-radius: 999px;
+    background: var(--color-brand-accent);
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border: 1px solid rgba(242, 247, 248, 0.35);
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+      border-color 200ms ease,
+      background-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .arrow-icon {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition:
+      transform 200ms ease,
+      filter 200ms ease;
+  }
+
+  .arrow-icon-prev {
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-prev-custom:hover,
+  .swiper-button-next-custom:hover,
+  .swiper-button-prev-custom:focus-visible,
+  .swiper-button-next-custom:focus-visible {
+    border-color: var(--color-brand-accent);
+    background: var(--color-brand-accent);
+    transform: translateY(-2px);
+  }
+
+  .swiper-button-prev-custom:hover .arrow-icon,
+  .swiper-button-prev-custom:focus-visible .arrow-icon,
+  .swiper-button-next-custom:hover .arrow-icon,
+  .swiper-button-next-custom:focus-visible .arrow-icon {
+    filter: brightness(0);
+    transform: scale(1.15);
+  }
+
+  .swiper-button-prev-custom:hover .arrow-icon-prev,
+  .swiper-button-prev-custom:focus-visible .arrow-icon-prev {
+    transform: rotate(180deg) scale(1.15);
   }
 </style>
