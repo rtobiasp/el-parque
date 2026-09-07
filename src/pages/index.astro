@@ -1,20 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Ubicacion from "../components/Ubicacion.astro";
-import Pinchos from "../components/Pinchos.astro";
-import Premios from "../components/Premios.astro";
-import NuestroBar from "../components/NuestroBar.astro";
+import Hero from "../components/sections/Hero.astro";
+import SobreNosotros from "../components/sections/SobreNosotros.astro";
+import Ubicacion from "../components/sections/Ubicacion.astro";
+import Pinchos from "../components/sections/Pinchos.astro";
+import Premios from "../components/sections/Premios.astro";
+import NuestroBar from "../components/sections/NuestroBar.astro";
 ---
 
 <Layout>
   <Hero />
-  <Ubicacion />
+  <SobreNosotros />
   <Pinchos />
-  <NuestroBar />
   <Premios />
+  <NuestroBar />
+  <Ubicacion />
 </Layout>
-
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";

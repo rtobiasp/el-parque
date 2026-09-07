@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import icon_signo_mas from "../assets/icon-signo-mas.png";
+import icon_signo_mas from "../../assets/icon-signo-mas.png";
 
 const {
   href,
@@ -16,7 +16,7 @@ const lightboxImage = lightboxSrc ?? href;
 ---
 
 <a
-  class="group relative block aspect-square overflow-hidden"
+  class="group relative block aspect-4/3 overflow-hidden"
   href={href}
   data-pswp-src={lightboxImage}
   data-pswp-width={width}

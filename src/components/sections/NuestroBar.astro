@@ -1,21 +1,21 @@
 ---
-import GalleryItem from "./GalleryItem.astro";
-import cafeteriaComida from "../assets/galeria/cafeteria-el-parque-comida.jpg";
-import googleImagen1 from "../assets/galeria/google-imagen-1.jpg";
-import googleImagen2 from "../assets/galeria/google-imagen-2.jpg";
-import googleImagen3 from "../assets/galeria/google-imagen-3.jpg";
-import googleImagen4 from "../assets/galeria/google-imagen-4.jpg";
-import googleImagen5 from "../assets/galeria/google-imagen-5.jpg";
-import googleImagen6 from "../assets/galeria/google-imagen-6.jpg";
-import googleImagen7 from "../assets/galeria/google-imagen-7.jpg";
-import googleImagen8 from "../assets/galeria/google-imagen-8.jpg";
-import googleImagen9 from "../assets/galeria/google-imagen-9.jpg";
-import googleImagen10 from "../assets/galeria/google-imagen-10.jpg";
-import googleImagen11 from "../assets/galeria/google-imagen-11.jpg";
-import googleImagen12 from "../assets/galeria/google-imagen-12.jpg";
-import googleImagen13 from "../assets/galeria/google-imagen-13.jpg";
-import googleImagen14 from "../assets/galeria/google-imagen-14.jpg";
-import googleImagen15 from "../assets/galeria/google-imagen-15.jpg";
+import GalleryItem from "../ui/GalleryItem.astro";
+import cafeteriaComida from "../../assets/galeria/cafeteria-el-parque-comida.jpg";
+import googleImagen1 from "../../assets/galeria/google-imagen-1.jpg";
+import googleImagen2 from "../../assets/galeria/google-imagen-2.jpg";
+import googleImagen3 from "../../assets/galeria/google-imagen-3.jpg";
+import googleImagen4 from "../../assets/galeria/google-imagen-4.jpg";
+import googleImagen5 from "../../assets/galeria/google-imagen-5.jpg";
+import googleImagen6 from "../../assets/galeria/google-imagen-6.jpg";
+import googleImagen7 from "../../assets/galeria/google-imagen-7.jpg";
+import googleImagen8 from "../../assets/galeria/google-imagen-8.jpg";
+import googleImagen9 from "../../assets/galeria/google-imagen-9.jpg";
+import googleImagen10 from "../../assets/galeria/google-imagen-10.jpg";
+import googleImagen11 from "../../assets/galeria/google-imagen-11.jpg";
+import googleImagen12 from "../../assets/galeria/google-imagen-12.jpg";
+import googleImagen13 from "../../assets/galeria/google-imagen-13.jpg";
+import googleImagen14 from "../../assets/galeria/google-imagen-14.jpg";
+import googleImagen15 from "../../assets/galeria/google-imagen-15.jpg";
 
 const galleryImages = [
   [cafeteriaComida, "Comida de El Parque", 650, 645],
@@ -39,7 +39,7 @@ const galleryImages = [
 
 <section
   id="nuestro-bar"
-  class="flex flex-col items-center justify-center min-h-[85vh] px-6 py-10 md:px-20 bg-brand-primary"
+  class="flex flex-col items-center justify-center min-h-[85vh] px-6 py-10 md:px-20 bg-brand-black rounded-b-4xl"
 >
   <div class="flex justify-center">
     <h2
@@ -50,7 +50,7 @@ const galleryImages = [
   </div>
   <div
     id="galeria"
-    class="grid grid-cols-2 gap-3 p-10 max-w-4xl sm:grid-cols-3 lg:grid-cols-5"
+    class="grid grid-cols-2 gap-3 p-10 max-w-6xl sm:grid-cols-3 lg:grid-cols-4"
   >
     {
       galleryImages.map(([image, alt, width, height]) => (
