@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro";
 import GalleryItem from "../ui/GalleryItem.astro";
 import cafeteriaComida from "../../assets/galeria/cafeteria-el-parque-comida.jpg";
 import googleImagen1 from "../../assets/galeria/google-imagen-1.jpg";
@@ -17,7 +18,7 @@ import googleImagen13 from "../../assets/galeria/google-imagen-13.jpg";
 import googleImagen14 from "../../assets/galeria/google-imagen-14.jpg";
 import googleImagen15 from "../../assets/galeria/google-imagen-15.jpg";
 
-const galleryImages = [
+const galleryImages: [ImageMetadata, string, number, number][] = [
   [cafeteriaComida, "Comida de El Parque", 650, 645],
   [googleImagen1, "Ambiente de El Parque", 46, 82],
   [googleImagen2, "Terraza de El Parque", 46, 59],
@@ -39,7 +40,7 @@ const galleryImages = [
 
 <section
   id="nuestro-bar"
-  class="flex flex-col items-center justify-center min-h-[85vh] px-6 py-10 md:px-20 bg-brand-black rounded-b-4xl"
+  class="section-shell flex flex-col items-center justify-center rounded-b-4xl bg-brand-black px-6 py-12 md:px-20"
 >
   <div class="flex justify-center">
     <h2
@@ -50,7 +51,7 @@ const galleryImages = [
   </div>
   <div
     id="galeria"
-    class="grid grid-cols-2 gap-3 p-10 max-w-6xl sm:grid-cols-3 lg:grid-cols-4"
+    class="grid w-full max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
   >
     {
       galleryImages.map(([image, alt, width, height]) => (

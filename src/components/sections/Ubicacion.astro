@@ -8,7 +8,7 @@ import icon_clock from "../../assets/icon-clock.png";
 <section
   id="ubicacion"
   data-location-section
-  class="px-6 py-10 md:px-20 h-[85vh] flex flex-col gap-8 bg-brand-white"
+  class="section-shell flex flex-col gap-8 bg-brand-white px-6 py-12 md:px-20"
 >
   <div class="flex flex-row items-center gap-4">
     <h2
@@ -18,8 +18,8 @@ import icon_clock from "../../assets/icon-clock.png";
     </h2>
     <div class="border-b flex-1"></div>
   </div>
-  <div class="grid grid-cols-[40%_60%]">
-    <div class="flex flex-col gap-6 pr-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[40%_60%]">
+    <div class="flex flex-col gap-6 lg:pr-8">
       <div class="dato-ubicacion flex flex-row gap-2 items-center">
         <Image
           src={icon_location}
@@ -89,16 +89,16 @@ import icon_clock from "../../assets/icon-clock.png";
       </div>
     </div>
 
-    <div class="iframe-ubicacion">
+    <div class="iframe-ubicacion aspect-video min-h-0 w-full overflow-hidden">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.4043453983777!2d-2.4114154161891417!3d42.461688254389074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5aab9153851001%3A0xce977d540bed5624!2sCafeteria%20El%20Parque!5e0!3m2!1ses!2ses!4v1788512407507!5m2!1ses!2ses"
         width="100%"
-        height="450"
+        height="100%"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"
-        class="iframe-ubicacion"></iframe>
+        class="h-full w-full"></iframe>
     </div>
   </div>
 </section>

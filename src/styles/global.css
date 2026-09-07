@@ -31,6 +31,11 @@ p {
   line-height: 1.6;
 }
 
+.section-shell {
+  min-height: 85svh;
+  box-sizing: border-box;
+}
+
 @theme {
   --color-brand-primary: #15616A;
   --color-brand-accent: #D6A84A;
