@@ -1,46 +1,41 @@
-# Astro Starter Kit: Basics
+# El Parque
+
+Web estática de Bar El Parque, construida con Astro.
+
+## Requisitos
+
+- Node.js `>=22.12.0`
+- pnpm
+
+## Comandos
+
+Ejecutar desde esta carpeta:
 
 ```sh
-pnpm create astro@latest -- --template basics
+pnpm install
+pnpm dev
+pnpm check
+pnpm build
+pnpm preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+`pnpm build` genera la carpeta `dist/`, lista para publicar en cualquier hosting de sitios estáticos.
 
-## 🚀 Project Structure
+## Configuración de producción
 
-Inside of your Astro project, you'll see the following folders and files:
+Define `PUBLIC_SITE_URL` con la URL pública, sin una barra final, para activar la URL canónica de la página:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+PUBLIC_SITE_URL=https://www.ejemplo.com
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+El archivo `.env.example` sirve como referencia. No subas secretos ni archivos `.env` al repositorio.
 
-## 🧞 Commands
+## Despliegue
 
-All commands are run from the root of the project, from a terminal:
+1. Instala dependencias con `pnpm install --frozen-lockfile`.
+2. Configura `PUBLIC_SITE_URL` en el proveedor de hosting.
+3. Ejecuta `pnpm check` y `pnpm build`.
+4. Publica el contenido de `dist/`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+La página principal está en `src/pages/index.astro`; los recursos públicos están en `public/`.
