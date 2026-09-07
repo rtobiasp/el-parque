@@ -32,10 +32,6 @@ import NuestroBar from "../components/sections/NuestroBar.astro";
       opacity: 0,
       duration: 1,
     })
-    .from(".btn-hero", {
-      opacity: 0,
-      duration: 1,
-    })
     .from(
       ".supratitulo",
       {
@@ -45,13 +41,117 @@ import NuestroBar from "../components/sections/NuestroBar.astro";
       "<",
     );
 
+  gsap.from("#sobre-nosotros h2", {
+    scrollTrigger: {
+      trigger: "#sobre-nosotros",
+      start: "top 75%",
+      once: true,
+    },
+    x: -80,
+    opacity: 0,
+    duration: 0.8,
+  });
+
+  gsap.from("#sobre-nosotros p", {
+    scrollTrigger: {
+      trigger: "#sobre-nosotros",
+      start: "top 75%",
+      once: true,
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.12,
+  });
+
+  gsap.from("#sobre-nosotros > div:last-child", {
+    scrollTrigger: {
+      trigger: "#sobre-nosotros",
+      start: "top 75%",
+      once: true,
+    },
+    x: 80,
+    opacity: 0,
+    duration: 0.9,
+  });
+
+  gsap.from("#pinchos .titulo-pinchos", {
+    scrollTrigger: {
+      trigger: "#pinchos",
+      start: "top 75%",
+      once: true,
+    },
+    y: 45,
+    opacity: 0,
+    duration: 0.8,
+  });
+
+  gsap.from("#pinchos .info-pinchos, #pinchos .pincho-slider-wrap", {
+    scrollTrigger: {
+      trigger: "#pinchos",
+      start: "top 70%",
+      once: true,
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.18,
+  });
+
+  gsap.from("#nuestro-bar h2", {
+    scrollTrigger: {
+      trigger: "#nuestro-bar",
+      start: "top 80%",
+      once: true,
+    },
+    y: 35,
+    opacity: 0,
+    duration: 0.8,
+  });
+
+  gsap.from("#galeria a", {
+    scrollTrigger: {
+      trigger: "#galeria",
+      start: "top 80%",
+      once: true,
+    },
+    y: 35,
+    opacity: 0,
+    duration: 0.55,
+    stagger: 0.08,
+  });
+
+  gsap.from("#ubicacion > div:first-child", {
+    scrollTrigger: {
+      trigger: "[data-location-section]",
+      start: "top 80%",
+      once: true,
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+  });
+
   gsap.from(".dato-ubicacion", {
     scrollTrigger: {
       trigger: "[data-location-section]",
       start: "top 80%",
+      once: true,
     },
     x: -100,
     opacity: 0,
+    duration: 0.7,
     stagger: 0.15,
+  });
+
+  gsap.from(".iframe-ubicacion", {
+    scrollTrigger: {
+      trigger: "[data-location-section]",
+      start: "top 75%",
+      once: true,
+    },
+    x: 80,
+    opacity: 0,
+    duration: 0.9,
   });
 </script>
