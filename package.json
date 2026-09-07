@@ -27,6 +27,7 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.13.0",
     "@types/leaflet": "^1.9.22"
   }
 }

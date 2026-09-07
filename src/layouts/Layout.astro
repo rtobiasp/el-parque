@@ -31,10 +31,18 @@ const canonicalUrl = siteUrl ? `${siteUrl}${Astro.url.pathname}` : undefined;
     <title>El Parque | Bar de barrio</title>
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-brand-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-brand-black"
+    >
+      Saltar al contenido principal
+    </a>
     <header class="fixed w-screen top-0 z-50 bg-transparent">
       <NavBar />
     </header>
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <footer>
       <Footer />
     </footer>
@@ -47,5 +55,10 @@ const canonicalUrl = siteUrl ? `${siteUrl}${Astro.url.pathname}` : undefined;
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-accent);
+    outline-offset: 4px;
   }
 </style>

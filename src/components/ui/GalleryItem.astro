@@ -16,12 +16,13 @@ const lightboxImage = lightboxSrc ?? href;
 ---
 
 <a
-  class="group relative block aspect-4/3 overflow-hidden"
+  class="group relative block aspect-4/3 overflow-hidden rounded-lg"
   href={href}
   data-pswp-src={lightboxImage}
   data-pswp-width={width}
   data-pswp-height={height}
   data-cropped={cropped ? "true" : undefined}
+  aria-label={`Abrir la imagen: ${alt}`}
 >
   <img class="h-full w-full object-cover" src={imageSrc} alt={alt} />
   <span
