@@ -4,16 +4,30 @@ import pincho_individual from "../assets/pincho_individual.png";
 ---
 
 <section
-  class="px-6 py-10 md:px-20 h-[85vh] flex flex-col gap-8 bg-brand-primary text-brand-white"
+  class="pinchos-section relative isolate overflow-hidden pl-6 pt-10 md:pl-20 min-h-[85vh] flex flex-col gap-8 bg-brand-primary text-brand-white rounded-t-4xl"
 >
-  <div class="titulo-pinchos">
+  <div class="titulo-pinchos relative z-10">
     <h2 class="max-w-3xl text-4xl leading-tight md:text-5xl lg:text-6xl">
-      Descubre nuestros pinchos estrella
+      Los jueves saben a
+      <span class="italic text-brand-accent"> Pincho-Pote </span>
     </h2>
   </div>
-  <div class="pinchos grid grid-cols-[30%_70%]">
-    <div class="info-pinchos">dawdw</div>
-    <div class="swiper swiper-container relative min-w-0 w-full">
+  <div
+    class="pinchos relative z-10 grid grid-cols-[1.5fr_3fr] not-md:grid-rows-2 not-md:grid-cols-1"
+  >
+    <div class="info-pinchos min-w-0 max-w-xl text-brand-white/80">
+      <p
+        class="m-0 text-base leading-7 md:text-lg md:leading-8 lg:text-xl lg:leading-9"
+      >
+        Los jueves a partir de las 20:00 la barra se llena de sabor. Elige tu
+        pincho favorito de nuestra selección semanal y acompáñalo con tu
+        consumición al mejor precio. El plan perfecto para desconectar y empezar
+        a saborear el fin de semana.
+      </p>
+    </div>
+    <div
+      class="swiper swiper-container relative min-w-0 w-full rounded-tl-4xl bg-brand-black/10 p-9! shadow-[0_0_5px_rgba(0,0,0,0.28)]"
+    >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <PinchoItem
@@ -50,19 +64,33 @@ import pincho_individual from "../assets/pincho_individual.png";
   new Swiper(".swiper", {
     modules: [Autoplay],
     loop: true,
+    grabCursor: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
     },
     spaceBetween: 16,
-    slidesPerView: 1.15,
+    slidesPerView: 3,
     breakpoints: {
       640: {
         slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 2.5,
+        slidesPerView: 1.75,
       },
     },
   });
 </script>
+
+<style>
+  .info-pinchos {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .info-pinchos p {
+    max-width: 26rem;
+    text-wrap: pretty;
+  }
+</style>

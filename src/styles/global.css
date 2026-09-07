@@ -33,6 +33,7 @@ p {
 
 @theme {
   --color-brand-primary: #15616A;
+  --color-brand-accent: #D6A84A;
   --color-brand-black: #0B1E22;
   --color-brand-white: #F2F7F8;
 }
