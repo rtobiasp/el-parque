@@ -1,0 +1,81 @@
+---
+import GalleryItem from "./GalleryItem.astro";
+import cafeteriaComida from "../assets/galeria/cafeteria-el-parque-comida.jpg";
+import googleImagen1 from "../assets/galeria/google-imagen-1.jpg";
+import googleImagen2 from "../assets/galeria/google-imagen-2.jpg";
+import googleImagen3 from "../assets/galeria/google-imagen-3.jpg";
+import googleImagen4 from "../assets/galeria/google-imagen-4.jpg";
+import googleImagen5 from "../assets/galeria/google-imagen-5.jpg";
+import googleImagen6 from "../assets/galeria/google-imagen-6.jpg";
+import googleImagen7 from "../assets/galeria/google-imagen-7.jpg";
+import googleImagen8 from "../assets/galeria/google-imagen-8.jpg";
+import googleImagen9 from "../assets/galeria/google-imagen-9.jpg";
+import googleImagen10 from "../assets/galeria/google-imagen-10.jpg";
+import googleImagen11 from "../assets/galeria/google-imagen-11.jpg";
+import googleImagen12 from "../assets/galeria/google-imagen-12.jpg";
+import googleImagen13 from "../assets/galeria/google-imagen-13.jpg";
+import googleImagen14 from "../assets/galeria/google-imagen-14.jpg";
+import googleImagen15 from "../assets/galeria/google-imagen-15.jpg";
+
+const galleryImages = [
+  [cafeteriaComida, "Comida de El Parque", 650, 645],
+  [googleImagen1, "Ambiente de El Parque", 46, 82],
+  [googleImagen2, "Terraza de El Parque", 46, 59],
+  [googleImagen3, "Detalle de El Parque", 82, 46],
+  [googleImagen4, "Interior de El Parque", 299, 168],
+  [googleImagen5, "Interior de El Parque", 262, 191],
+  [googleImagen6, "Cafes de El Parque", 319, 240],
+  [googleImagen7, "Comida de El Parque", 225, 224],
+  [googleImagen8, "Entrada de El Parque", 299, 168],
+  [googleImagen9, "Barra de El Parque", 498, 614],
+  [googleImagen10, "Ambiente de El Parque", 164, 307],
+  [googleImagen11, "Tortilla de El Parque", 305, 165],
+  [googleImagen12, "Interior de El Parque", 299, 168],
+  [googleImagen13, "Vitrina de El Parque", 191, 264],
+  [googleImagen14, "Tapas de El Parque", 166, 303],
+  [googleImagen15, "Desayuno de El Parque", 299, 168],
+];
+---
+
+<section
+  id="nuestro-bar"
+  class="flex flex-col items-center justify-center min-h-[85vh] px-6 py-10 md:px-20 bg-brand-primary"
+>
+  <div class="flex justify-center">
+    <h2
+      class="max-w-3xl text-4x text-brand-white leading-tight md:text-5xl lg:text-6xl"
+    >
+      NUESTRO BAR
+    </h2>
+  </div>
+  <div
+    id="galeria"
+    class="grid grid-cols-2 gap-3 p-10 max-w-4xl sm:grid-cols-3 lg:grid-cols-5"
+  >
+    {
+      galleryImages.map(([image, alt, width, height]) => (
+        <GalleryItem
+          href={image.src}
+          imageSrc={image.src}
+          alt={alt}
+          width={width}
+          height={height}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#galeria",
+    children: "a",
+    showHideAnimationType: "fade",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>

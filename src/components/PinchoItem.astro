@@ -1,13 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { title, img, description } = Astro.props;
+const { title, img } = Astro.props;
 ---
 
-<Image
-  class={"rounded-2xl"}
-  src={img}
-  alt={"Imagen del pincho " + title}
-  loading={"lazy"}
-/>
+<Image src={img} alt={"Imagen del pincho " + title} loading={"lazy"} />
 <div class="swiper-lazy-preloader"></div>

@@ -4,6 +4,7 @@ import pincho_individual from "../assets/pincho_individual.png";
 ---
 
 <section
+  id="pinchos"
   class="pinchos-section relative isolate overflow-hidden pl-6 pt-10 md:pl-20 min-h-[85vh] flex flex-col gap-8 bg-brand-primary text-brand-white rounded-t-4xl"
 >
   <div class="titulo-pinchos relative z-10">
@@ -26,30 +27,26 @@ import pincho_individual from "../assets/pincho_individual.png";
       </p>
     </div>
     <div
-      class="swiper swiper-container relative min-w-0 w-full rounded-tl-4xl bg-brand-black/10 p-9! shadow-[0_0_5px_rgba(0,0,0,0.28)]"
+      class="swiper swiper-container relative min-w-0 w-full rounded-tl-4xl rounded-bl-4xl"
     >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <PinchoItem
-            title="Tortilla"
-            img={pincho_individual}
-            description="Picante"
-          />
+          <PinchoItem title="Tortilla" img={pincho_individual} />
         </div>
         <div class="swiper-slide">
-          <PinchoItem title="Kebab" img={pincho_individual} description="" />
+          <PinchoItem title="Kebab" img={pincho_individual} />
         </div>
         <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+          <PinchoItem title="TEST" img={pincho_individual} />
         </div>
         <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+          <PinchoItem title="TEST" img={pincho_individual} />
         </div>
         <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+          <PinchoItem title="TEST" img={pincho_individual} />
         </div>
         <div class="swiper-slide">
-          <PinchoItem title="TEST" img={pincho_individual} description="TEST" />
+          <PinchoItem title="TEST" img={pincho_individual} />
         </div>
       </div>
     </div>

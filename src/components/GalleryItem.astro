@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import icon_signo_mas from "../assets/icon-signo-mas.png";
+
+const {
+  href,
+  imageSrc,
+  alt,
+  width,
+  height,
+  lightboxSrc,
+  cropped = false,
+} = Astro.props;
+
+const lightboxImage = lightboxSrc ?? href;
+---
+
+<a
+  class="group relative block aspect-square overflow-hidden"
+  href={href}
+  data-pswp-src={lightboxImage}
+  data-pswp-width={width}
+  data-pswp-height={height}
+  data-cropped={cropped ? "true" : undefined}
+>
+  <img class="h-full w-full object-cover" src={imageSrc} alt={alt} />
+  <span
+    class="pointer-events-none absolute inset-0 flex items-center justify-center bg-brand-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+  >
+    <Image
+      src={icon_signo_mas}
+      alt=""
+      class="h-7 w-7 rounded-full bg-brand-accent p-1.5 object-contain"
+    />
+  </span>
+</a>
