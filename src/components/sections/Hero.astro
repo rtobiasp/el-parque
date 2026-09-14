@@ -4,8 +4,8 @@ import Button from "../ui/Button.astro";
 
 <section class="relative min-h-[100svh] overflow-hidden px-6 md:px-20">
   <div id="bg-layer" class="absolute inset-0"></div>
-  <div class="relative z-10 flex min-h-[100svh] items-center pt-20 md:pt-28">
-    <div class="max-w-2xl">
+  <div class="relative z-10 flex min-h-[100svh] items-start justify-center pt-36 text-center md:items-center md:justify-start md:pt-28 md:text-left">
+    <div class="mx-auto w-full max-w-2xl md:mx-0">
       <div class="mb-5">
         <p
           class="supratitulo text-sm uppercase tracking-[0.25em] text-brand-white/80"
@@ -15,7 +15,7 @@ import Button from "../ui/Button.astro";
       </div>
       <div>
         <h1
-          class="titulo max-w-3xl text-4xl leading-[1.08] text-brand-white sm:text-5xl md:text-7xl"
+          class="titulo mx-auto max-w-3xl text-4xl leading-[1.08] text-brand-white sm:text-5xl md:mx-0 md:text-7xl"
         >
           El arte del buen café, servido cada mañana
         </h1>
@@ -37,8 +37,17 @@ import Button from "../ui/Button.astro";
       ),
       url("../../assets/banner_v3.png");
     background-repeat: no-repeat;
-    background-position: center;
+    /* En móvil la taza está a la derecha de la imagen: desplazamos
+       el encuadre para que el café quede centrado y algo más abajo,
+       dejando hueco arriba para el texto. */
+    background-position: 72% 60%;
     background-size: cover;
+  }
+
+  @media (min-width: 768px) {
+    #bg-layer {
+      background-position: center;
+    }
   }
 
   .titulo {
